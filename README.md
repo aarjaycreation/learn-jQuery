@@ -22,6 +22,9 @@ jQuery Slide
 jQuery Animate 
 jQuery stop() 
 jQuery Callback 
+logout time :- 7 : 00 PM
+
+code :- https://github.com/aarjaycreation/learn-jQuery/blob/master/assets/js/main2.js
 
 
 ## next day 
@@ -61,3 +64,11 @@ jQuery Effects
 jQuery HTML/CSS 
 jQuery Traversing 
 jQuery AJAX jQuery Misc jQuery Properties
+
+
+good morning sir 
+I need a project for college submission
+
+birth date: 22-01-1998
+Phone number: 9783351443
+Address:- Bhagwan Smruti Apartment 1, Narhe Gaon Rd, Ambegaon BK, Pune, Maharashtra pin-code 411041

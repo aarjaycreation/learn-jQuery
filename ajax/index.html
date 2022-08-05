@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Crash Course | Ajax</title>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<style>
+		body{
+			font-size: 17px;
+			font-family: arial;
+			background: #f4f4f4;
+			line-height: 1.5em;
+		}
+		header{
+			background:rgb(27, 161, 161);
+			color:#fff;
+			padding:20px;
+			text-align: center;
+			border-bottom: 4px rgb(77, 145, 161) solid;
+			margin-bottom: 10px;
+		}
+		#container{
+			width:90%;
+			margin:auto;
+			padding:10px;
+		}
+		.allcard{
+			display: flex;
+			gap: 1rem;
+			flex-wrap: wrap;
+		}
+		.card{
+			padding: 0.3rem;
+			border: 1px solid rgb(138, 95, 95);
+			
+		}
+		.name{
+			background-color: aqua;
+		}
+		.email{
+			background-color: aliceblue;
+		}
+		.body{
+			background-color: orange;
+		}
+
+	</style>
+</head>
+<body>
+	<header>
+		<h1>jQuery Ajax</h1>
+	</header>
+	<div id="container">
+		<div id="result"></div>
+		<img class="image" src="" alt="">
+
+		<ul id="users"></ul>
+		<h3>result</h3>
+		<div class="allcard">
+
+			<div class="card">
+				<!-- <div class="title">
+					this is titel
+				</div>
+				<div class="email">
+					email
+				</div>
+				<div class="body">
+					this is body
+				</div> -->
+			</div>
+
+
+
+		</div>
+
+
+		<!-- <form id="postForm" action="https://jsonplaceholder.typicode.com/posts">
+		<input type="text" id="title" placeholder="Title"><br>
+		<textarea placeholder="Body" id="body"></textarea><br>
+		<input type="submit" value="Submit">
+		</form> -->
+	</div>
+
+	<script>
+		// ready function 
+		$(document).ready(function(){
+			// load 
+			// $('#result').load('test.html', function(responseTxt, statusTxt, xhr){
+			// 	if(statusTxt == "success"){
+			// 		alert('working');
+			// 	} else if(statusTxt == "error"){
+			// 		alert("Error: "+xhr.statusText);
+			// 	}
+			// });
+			
+
+			// get 
+			// $.get('test.html', function(data){
+			// 	$('#result').html(data);
+			// });
+			
+
+		// get json 
+			// $.getJSON('users.json', function(data){
+			// 	$.each(data, function(i, user){
+			// 		$('ul#users').append('<li>'+user.firstName+'</li>');
+			// 	});
+			// });
+			
+
+			// ajex 
+			// $.ajax({
+			// 	method:'GET',
+			// 	url: 'https://jsonplaceholder.typicode.com/posts',
+			// 	dataType: 'json'
+			// }).done(function(data){
+			// 	console.log(data);
+			// 	$.map(data, function(post, i){
+			// 		$('#result').append('<h3>'+post.title+'</h3><p>'+post.body+'</p>');
+			// 	});
+			// });
+
+
+			$.ajax({
+				method : 'get',
+				url : 'https://jsonplaceholder.typicode.com/comments',
+				datatype : 'json'
+
+			}).done(function(data){
+				console.log(data);
+				$.map(data,function(post, i){
+				$('.card').append( '<p class="name"><b>name : </b>'+post.name+'</p><p class="email"><b>email: </b>'+post.email+'</p><p class="body"><b>comment: </b>'+post.body+'</p>')
+				// $('.email').append('<p>'+post.email+'</p>')
+				// $('.body').append('<p>'+post.body+'</p>')
+				})
+			})
+		
+			/*
+			$('#postForm').submit(function(e){
+				e.preventDefault();
+
+				var title = $('#title').val();
+				var body = $('#body').val();
+				var url = $(this).attr('action');
+
+				$.post(url, {title:title, body:body}).done(function(data){
+					console.log('Post data recive');
+					console.log(data);
+				});
+			});
+			*/
+		});
+	</script>
+</body>
+</html>
